@@ -48,8 +48,10 @@ methods: {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    #container {
+    #cards-container {
         width: 70%;
         margin: 40px auto;
+        display: flex;
+        flex-wrap: wrap;
     }
 </style>

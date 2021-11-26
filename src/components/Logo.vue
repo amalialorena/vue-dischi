@@ -18,7 +18,7 @@ export default {
 <style scoped lang="scss">
     nav {
         height: 70px;
-        background-color: #222c36;
+        background-color:#222c36;
         .logo {
             height: 100%;
             img {
