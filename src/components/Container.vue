@@ -3,6 +3,7 @@
       <Card
       v-for="disk,i in disks"
       :key="i"
+      :detail = disk
       />
   </div>
 </template>
@@ -14,34 +15,56 @@ import Card from '@/components/Card.vue';
 export default {
   name: 'CardsContainer',
    components: {
-    Card
-  },
-
-data () {
+    Card,
+   },
+data() {
     return {
         // apiUrl: "https://flynn.boolean.careers/exercises/api/array/music",
-        disks: []
+        disks: [
+        {
+            "poster": "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
+            "title": "New Jersey",
+            "author": "Bon Jovi",
+            "genre": "Rock",
+            "year": "1988"
+        },
+        {
+            "poster": "https://img.discogs.com/vknPDdrqRbT92pNRX0W4I5N91jg=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1246953-1448927086-6590.jpeg.jpg",
+            "title": "Live at Wembley 86",
+            "author": "Queen",
+            "genre": "Pop",
+            "year": "1992"
+        }
+       
+    ]
     }
-},
-
-// created () {
-//     this.getDisks()
-// },
-
-// methods: {
-//     getDisks () {
-//         axios
-//         .get(this.apiUrl)
-//         .then((result) => {
-//             this.disks = result
-//             console.log(result)
-//         })
-
-//     }
-// }
 }
+  
+};
+
+
+
+
 
 </script>
+
+
+<!--created () {
+    this.getDisks()
+},
+
+methods: {
+    getDisks () {
+        axios
+        .get(this.apiUrl)
+        .then((result) => {
+            this.disks = result.data.response
+            console.log("result", result.data.response)
+        })
+
+    }
+}
+} -->
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

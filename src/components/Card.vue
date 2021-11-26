@@ -1,11 +1,11 @@
 <template>
   <div class="card">
       <div class="img-container">
-          <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
+          <img :src="detail.poster" alt="">
       </div>
-      <h2>new jersey</h2>
-      <p>bon jovi</p>
-      <p>1988</p>
+      <h2>{{detail.title}}</h2>
+      <p>{{detail.author}}</p>
+      <p>{{detail.year}}</p>
    
   </div>
 </template>
@@ -14,7 +14,7 @@
 export default {
   name: 'Card',
   props: {
-    msg: String
+    detail: Object
   }
 }
 </script>
