@@ -32,6 +32,13 @@ export default {
     img {
         width: 100%
     }
+    h2 {
+        margin-bottom: 10px;
+    }
+    p {
+        color: grey;
+        font-size: .8em;
+    }
 }
 
 </style>
