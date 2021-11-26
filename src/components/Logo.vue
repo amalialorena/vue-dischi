@@ -1,13 +1,14 @@
 <template>
   <nav>
       <div class="logo">
-           
+           <i class="fab fa-spotify"></i>
       </div>
      
   </nav>
 </template>
 
 <script>
+
 export default {
   name: 'Logo',
   }
@@ -21,6 +22,12 @@ export default {
         background-color:#222c36;
         .logo {
             height: 100%;
+            color: #25d24d;
+            font-size: 50px;
+            i {
+              margin-left: 10px;
+              vertical-align: middle;
+            } 
             img {
             height: 100%;
             border-radius: 50%;
