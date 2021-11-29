@@ -40,22 +40,12 @@ data() {
     return {
         apiUrl: "https://flynn.boolean.careers/exercises/api/array/music",
         disks: [],
+        selected: ""
     }
 },
 
 created () {
     this.getDisks()
-},
-
-computed: {
-    filterByGenre (element) {
-        if(element === "") {
-            return this.disks
-        }
-        return this.disks.filter((item) => {
-            return item.genre.includes(element)
-        })
-    }
 },
 
 methods: {
@@ -64,8 +54,20 @@ methods: {
         .get(this.apiUrl)
         .then((result) => {
             this.disks = result.data.response
-        })
 
+        })
+    
+    },
+    
+    filterByGenre (element) {
+        console.log(element)
+        if(element === "") {
+            return this.disks
+        }
+        this.selected = element
+        return this.disks.filter((item) => {
+            return item.genre == this.selected
+        })
     }
 }
 }
