@@ -14,7 +14,7 @@
 
     <div id="cards-container">
       <Card
-      v-for="disk,i in filterByGenre"
+      v-for="disk,i in filtered"
       :key="i"
       :detail = disk
       />
@@ -48,6 +48,20 @@ created () {
     this.getDisks()
 },
 
+computed: {
+    filtered () {
+        let filtered = this.disks;
+        let element  = this.selected;
+        if(element === "") {
+            return filtered
+        }
+        filtered = filtered.filter((item) => {
+            return item.genre === this.selected
+        });
+        return filtered;
+    }
+},
+
 methods: {
     getDisks () {
         axios
@@ -58,18 +72,27 @@ methods: {
         })
     
     },
+
+    filterByGenre(event) {
+        this.selected = event;
+    },
     
-    filterByGenre (element) {
-        console.log(element)
-        if(element === "") {
-            return this.disks
-        }
-        this.selected = element
-        return this.disks.filter((item) => {
-            return item.genre == this.selected
-        })
+//     filterByGenre (element) {
+//         console.log(element)
+//         this.selected = element
+//         if(this.selected === "") {
+//             // console.log(element)
+//             // console.log(this.disks)
+//             return this.disks
+//         }
+        
+//         return this.disks.filter((item) => {
+//             // console.log(item.genre)
+//             //  console.log(this.disks)
+//             return item.genre == this.selected
+//         })
+//     }
     }
-}
 }
 
 </script>
