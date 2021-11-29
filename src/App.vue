@@ -1,19 +1,20 @@
 <template>
   <div id="app">
     <Logo/>
-    <CardsContainer/>
+    
+    <Container/>
   </div>
 </template>
 
 <script>
-import CardsContainer from './components/Container.vue';
+import Container from './components/Container.vue';
 import Logo from './components/Logo.vue'
 
 export default {
   name: 'App',
   components: {
     Logo,
-    CardsContainer
+    Container
   }
 }
 </script>
