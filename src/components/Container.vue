@@ -1,14 +1,16 @@
 <template>
 <div class="container">
-<div class="select-container">
-      <select v-model="selected" id="" > 
+ <!-- <div class="select-container">
+ <select v-model="selected" id="" > 
           <option disabled value="">Filter by genre</option>
           <option value="Jazz">Jazz</option>
           <option value="Pop">Pop</option>
           <option value="Rock">Rock</option>
           <option value="Metal">Metal</option>
       </select>
-      <span class="debug">selected: {{selected}}</span>
+</div> -->
+      <Select @option="filterByGenre"/>
+      <!-- <span class="debug">selected: {{selected}}</span> -->
 
     <div id="cards-container">
       <Card
@@ -17,26 +19,27 @@
       :detail = disk
       />
   </div>
-    </div>
-
 </div>
+
+
 
 </template>
 
 <script>
 import Card from '@/components/Card.vue';
+import Select from '@/components/Select.vue';
 import axios from 'axios'
 
 export default {
   name: 'Container',
    components: {
     Card,
+    Select
    },
 data() {
     return {
         apiUrl: "https://flynn.boolean.careers/exercises/api/array/music",
         disks: [],
-        selected: "",
     }
 },
 
@@ -45,24 +48,12 @@ created () {
 },
 
 computed: {
-//     filteredDisks(){
-//         if(this.value === "") {
-//             console.log("value",this.value),
-//             return this.disks;
-//             }
-    
-//         return this.disks.filter((item) => {
-//             console.log(this.value),
-//                 return item.genre.includes("value",this.value)
-        
-//     })
-// }
-    filterByGenre () {
-        if(this.selected === "") {
+    filterByGenre (element) {
+        if(element === "") {
             return this.disks
         }
         return this.disks.filter((item) => {
-            return item.genre.includes(this.selected)
+            return item.genre.includes(element)
         })
     }
 },
