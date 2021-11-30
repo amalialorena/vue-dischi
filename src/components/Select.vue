@@ -7,7 +7,6 @@
           <option value="Rock">Rock</option>
           <option value="Metal">Metal</option>
       </select>
-      <span class="debug">selected: {{selected}}</span>
 </div>
 </template>
 

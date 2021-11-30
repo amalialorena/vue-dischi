@@ -6,7 +6,6 @@
       <h2>{{detail.title}}</h2>
       <p>{{detail.author}}</p>
       <p>{{detail.year}}</p>
-   
   </div>
 </template>
 
