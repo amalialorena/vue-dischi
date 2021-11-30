@@ -1,20 +1,20 @@
 <template>
   <div class="select-container">
-      <select v-model="selectAuthor" id="">
+      <!-- <select v-model="selectAuthor" id="">
           <option value="">Filter by Author</option>
-          <option value="" v-for="object, i in detail" :key="i">{{object.author}}</option>
-      </select>
+          <option value="" v-for="object, i in detail" :key="i">{{object.author}}</option> -->
+      <!-- </select> -->
       
-    <span>{{author}}</span>
+    <!-- <span>{{author}}</span> -->
   </div>
 </template>
 
 <script>
 export default {
   name: "FilterByAuthor",
-  props: {
-      detail : Object
-  },
+//   props: {
+//       detail : Object
+//   },
 
   data () {
       return {

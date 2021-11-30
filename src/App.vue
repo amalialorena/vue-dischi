@@ -1,22 +1,32 @@
 <template>
   <div id="app">
-    <Logo/>
-    
-    <Container/>
+    <Logo @option="filterByGenre"/>
+    <Container :info="selectedGenre"/>
   </div>
 </template>
 
 <script>
 import Container from './components/Container.vue';
-import Logo from './components/Logo.vue'
+import Logo from "@/components/Logo.vue";
 
 export default {
   name: 'App',
   components: {
-    Logo,
-    Container
-  }
-}
+    Container,
+    Logo
+  },
+  data() {
+    return {
+      selectedGenre: "",
+    };
+  },
+  methods: {
+    filterByGenre(param) {
+      this.selectedGenre = param;
+    },
+  },
+};
+
 </script>
 
 <style lang="scss">
